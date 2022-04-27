@@ -134,21 +134,21 @@ void __cdecl watch_thread(void *arg) {
                  (void *)(params->memory_range.base_address +
                           params->memory_range.size),
                  (void *)(wsb.VirtualPage * 0x1000), wsb.ShareCount);
-          polling = false;
-          break;
+          // polling = false;
+          //  break;
         }
       }
     }
 
-    if (polling) {
-      uint32_t now = GetTickCount();
-      if (now - start > max_elapsed) {
-        printf("Timer elapsed, no tamper :)");
-        break;
-      }
+    // if (polling) {
+    //   uint32_t now = GetTickCount();
+    //   if (now - start > max_elapsed) {
+    //     printf("Timer elapsed, no tamper :)");
+    //     // break;
+    //   }
 
-      Sleep(500);
-    }
+    //  Sleep(500);
+    //}
   }
 
   free(pwsi);
